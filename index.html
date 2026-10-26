@@ -154,6 +154,24 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .frame .inner{border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
 .frame .slashdeco{position:absolute;right:-20px;top:-70px;width:150px;height:110px;background:var(--orange);clip-path:polygon(55% 0,100% 0,45% 100%,0 100%);z-index:-1;will-change:transform}
 
+/* LOGO WALL */
+.logos{padding-block:clamp(10px,2vw,30px) clamp(90px,11vw,160px);position:relative;overflow:hidden}
+.logos h2 .o{color:var(--orange);display:block}
+.logos .grp{display:flex;align-items:center;gap:18px;font-weight:600;font-size:16px;margin:clamp(44px,6vw,72px) 0 18px}
+.logos .grp::after{content:"";flex:1;height:1px;background:var(--line)}
+.lgrid{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.lgrid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.lt{position:relative;height:clamp(84px,9vw,118px);background:var(--ink-2);border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;overflow:hidden;isolation:isolate;transition:border-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.lt::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(180px circle at var(--x,50%) var(--y,50%),rgba(233,84,42,.18),transparent 70%);opacity:0;transition:opacity .3s}
+.lt::after{content:"";position:absolute;top:-10%;bottom:-10%;width:34px;left:-60px;z-index:-1;background:var(--orange);opacity:.9;clip-path:polygon(55% 0,100% 0,45% 100%,0 100%);transition:left .6s cubic-bezier(.2,.8,.2,1)}
+.lt i{display:block;width:72%;height:44%;background:var(--cream);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transition:background-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.lt:hover{border-color:var(--orange);transform:translateY(-4px)}
+.lt:hover::before{opacity:1}
+.lt:hover::after{left:calc(100% - 26px)}
+.lt:hover i{background:var(--orange);transform:scale(1.06)}
+.five .lt i{height:38%}
+@media (max-width:900px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five .lt:last-child{grid-column:1/-1}}
+
 /* WHAT WE DO (cream) */
 .cream{background:var(--cream);color:var(--ink)}
 .cream .eyebrow{color:var(--orange-deep)} .cream .eyebrow::before{background:var(--orange-deep)}
@@ -393,6 +411,30 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
   </div>
 </section>
 
+<section class="logos wrap" id="logos" aria-label="Track record">
+  <div class="eyebrow rv">05 / track record</div>
+  <h2 class="rv" style="margin-top:22px">Built by us.<span class="o">Trusted at scale.</span></h2>
+  <div class="grp rv">Products we built</div>
+  <div class="lgrid" id="lgrid">
+      <div class="lt rv" role="img" aria-label="Triple.blue"><i style="--m:url(img/logo-triple.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="Uniek"><i style="--m:url(img/logo-uniek.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="UpHill"><i style="--m:url(img/logo-uphill.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="iMolty"><i style="--m:url(img/logo-imolty.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="Xdaam"><i style="--m:url(img/logo-xdaam.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="4Sale"><i style="--m:url(img/logo-4sale.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="Cartona"><i style="--m:url(img/logo-cartona.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="DRP9"><i style="--m:url(img/logo-drp9.webp)"></i></div>
+  </div>
+  <div class="grp rv">Where our founders have led</div>
+  <div class="lgrid five">
+      <div class="lt rv" role="img" aria-label="BetterUp"><i style="--m:url(img/logo-betterup.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="Booking.com"><i style="--m:url(img/logo-booking.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="Catawiki"><i style="--m:url(img/logo-catawiki.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="elmenus"><i style="--m:url(img/logo-elmenus.webp)"></i></div>
+      <div class="lt rv" role="img" aria-label="CONNY"><i style="--m:url(img/logo-conny.webp)"></i></div>
+  </div>
+</section>
+
 <section class="cream whatwedo wrap" aria-label="What we do">
   <div class="eyebrow rv">06 / what we do</div>
   <h2 class="rv">What we do, again and again.</h2>
@@ -418,14 +460,6 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
       <div class="org rv"><h3>4Sale</h3><p>Kuwait’s leading classifieds marketplace, becoming a transaction-based business.</p></div>
       <div class="org rv"><h3>Cartona</h3><p>Egypt’s B2B marketplace for retailers and suppliers. Consultant and acting CTPO.</p></div>
       <div class="org rv"><h3>And more</h3><p>elmenus, food discovery in Egypt. CONNY, Berlin legal tech that changed German law. AppLift, 200bn records a month.</p></div>
-    </div>
-  </div>
-  <div class="marquee" aria-label="Products we built and companies our founders have led">
-    <div class="row">
-      <img src="img/logos-built.webp" alt="Products built: Triple.blue, Uniek, UpHill, iMolty, Xdaam, 4Sale, Cartona, DRP9">
-      <img src="img/logos-led.webp" alt="Where our founders have led: BetterUp, Booking.com, Catawiki, elmenus, CONNY">
-      <img src="img/logos-built.webp" alt="" aria-hidden="true">
-      <img src="img/logos-led.webp" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
@@ -606,6 +640,8 @@ if(!reduce && matchMedia('(pointer:fine)').matches){
     f.addEventListener('pointermove',e=>{const r=f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;inner.style.transform=`rotateY(${x*10}deg) rotateX(${-y*8}deg)`});
     f.addEventListener('pointerleave',()=>inner.style.transform='')});
 }
+/* logo tile spotlight */
+document.querySelectorAll('.lt').forEach(t=>t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--x',(e.clientX-r.left)+'px');t.style.setProperty('--y',(e.clientY-r.top)+'px')}));
 /* active nav link */
 const links=[...document.querySelectorAll('nav.top ul a')];
 if('IntersectionObserver' in window){
