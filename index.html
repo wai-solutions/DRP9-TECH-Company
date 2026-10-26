@@ -150,7 +150,8 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .case ul{list-style:none;padding:0;margin:0;display:grid;gap:14px;font-size:clamp(17px,1.5vw,21px);color:#c9c3b9;font-weight:300}
 .case li{display:flex;gap:12px}
 .case li::before{content:"";flex:0 0 14px;height:18px;margin-top:5px;background:var(--orange);clip-path:polygon(55% 0,100% 0,45% 100%,0 100%)}
-.frame{position:relative;perspective:1200px}
+.frame{position:relative;perspective:1200px;isolation:isolate;z-index:1}
+.case .txt{position:relative;z-index:2}
 .frame .inner{border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
 .frame .slashdeco{position:absolute;right:-20px;top:-70px;width:150px;height:110px;background:var(--orange);clip-path:polygon(55% 0,100% 0,45% 100%,0 100%);z-index:-1;will-change:transform}
 
@@ -264,6 +265,7 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .idea .grid,.case .grid,.scale .grid,.bio-in{grid-template-columns:minmax(0,1fr)}
   .case.flip .grid .txt{order:0}
+  .frame .slashdeco{display:none}
   .idea .mark{max-width:260px;justify-self:start}
   .caps{grid-template-columns:minmax(0,1fr)}
   .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
