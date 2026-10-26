@@ -72,7 +72,7 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .hero .rule{width:72px;height:3px;background:var(--orange)}
 .hero .tag{font-size:clamp(19px,2vw,28px);font-weight:600;line-height:1.3}
 .hero .tag em{color:var(--orange);font-weight:500}
-.hero-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font-size:14px;color:#b5afa5;margin-top:18px}
+.hero-foot{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 32px;font-size:14px;color:#b5afa5;margin-top:18px}
 .scrollcue{display:flex;align-items:center;gap:10px}
 .scrollcue i{width:1px;height:34px;background:linear-gradient(var(--orange),transparent);animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -164,6 +164,7 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .logos .grp::after{content:"";flex:1;height:1px;background:var(--line)}
 .lgrid{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
 .lgrid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.lgrid.nine{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lt{position:relative;height:clamp(84px,9vw,118px);background:var(--ink-2);border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;overflow:hidden;isolation:isolate;transition:border-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
 .lt::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(180px circle at var(--x,50%) var(--y,50%),rgba(233,84,42,.18),transparent 70%);opacity:0;transition:opacity .3s}
 .lt::after{content:"";position:absolute;top:-10%;bottom:-10%;width:34px;left:-60px;z-index:-1;background:var(--orange);opacity:.9;clip-path:polygon(55% 0,100% 0,45% 100%,0 100%);transition:left .6s cubic-bezier(.2,.8,.2,1)}
@@ -173,7 +174,7 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .lt:hover::after{left:calc(100% - 26px)}
 .lt:hover i{background:var(--orange);transform:scale(1.06)}
 .five .lt i{height:38%}
-@media (max-width:900px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five .lt:last-child{grid-column:1/-1}}
+@media (max-width:900px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five{grid-template-columns:repeat(2,minmax(0,1fr))}.lgrid.five .lt:last-child,.lgrid.nine .lt:last-child{grid-column:1/-1}.lgrid.nine{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* WHAT WE DO (cream) */
 .cream{background:var(--cream);color:var(--ink)}
@@ -317,7 +318,7 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
     <div class="rule"></div>
     <div class="tag">Software that ships.<br><em>Teams that keep it shipping.</em></div>
     <div class="hero-foot">
-      <span>Khaled Gomaa · Kareem Zaher · Mohamed Motaweh · Mohamed El Sawaf</span>
+      <span></span>
       <span class="scrollcue"><i></i>Cairo / Amsterdam / Lisbon / Dubai</span>
     </div>
   </div>
@@ -374,31 +375,32 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
         <div class="eyebrow">04 / in production</div>
         <h2 style="margin-top:18px">Built, shipped, <em>live.</em></h2>
       </div>
-      <div class="counter" aria-hidden="true"><b id="pc">01</b> / 08</div>
+      <div class="counter" aria-hidden="true"><b id="pc">01</b> / 09</div>
     </div>
     <div class="track" id="track">
-      <article class="pcard"><span class="idx">01</span><div class="shot"><img src="img/triple.webp" alt="Triple.blue homepage" loading="lazy"></div><div class="meta"><div><h3>Triple.blue</h3><p>AI for property</p></div><span class="st">exited</span></div></article>
+      <article class="pcard"><span class="idx">01</span><div class="shot"><img src="img/adam.webp" alt="Adam homepage: flooring made smart in the United Kingdom" loading="lazy"></div><div class="meta"><div><h3>Adam</h3><p>AI for property maintenance</p></div><span class="st">live · 6+ countries</span></div></article>
       <article class="pcard"><span class="idx">02</span><div class="shot"><img src="img/uniek.webp" alt="Uniek.ai homepage" loading="lazy"></div><div class="meta"><div><h3>Uniek.ai</h3><p>AI concierge · Spain &amp; Portugal</p></div><span class="st">live</span></div></article>
       <article class="pcard"><span class="idx">03</span><div class="shot"><img src="img/uphill.webp" alt="UpHill clinical cockpit" loading="lazy"></div><div class="meta"><div><h3>UpHill</h3><p>Medical AI agent</p></div><span class="st">national scale</span></div></article>
       <article class="pcard"><span class="idx">04</span><div class="shot"><img src="img/imolty.webp" alt="Imolty.ai homepage" loading="lazy"></div><div class="meta"><div><h3>Imolty.ai</h3><p>AI product engine</p></div></div></article>
       <article class="pcard"><span class="idx">05</span><div class="shot"><img src="img/xdaam.webp" alt="Xdaam homepage" loading="lazy"></div><div class="meta"><div><h3>Xdaam</h3><p>Service-center OS</p></div></div></article>
       <article class="pcard"><span class="idx">06</span><div class="shot"><img src="img/4sale.webp" alt="4Sale homepage" loading="lazy"></div><div class="meta"><div><h3>4Sale</h3><p>Classifieds marketplace</p></div></div></article>
       <article class="pcard"><span class="idx">07</span><div class="shot"><img src="img/cartona.webp" alt="Cartona homepage" loading="lazy"></div><div class="meta"><div><h3>Cartona</h3><p>B2B marketplace</p></div></div></article>
-      <article class="pcard"><span class="idx">08</span><div class="shot"><img src="img/drp9.webp" alt="DRP9 creator marketplace" loading="lazy"></div><div class="meta"><div><h3>DRP9</h3><p>Creator marketplace</p></div></div></article>
+      <article class="pcard"><span class="idx">08</span><div class="shot"><img src="img/triple.webp" alt="Triple.blue homepage" loading="lazy"></div><div class="meta"><div><h3>Triple.blue</h3><p>AI for property</p></div><span class="st">exited</span></div></article>
+      <article class="pcard"><span class="idx">09</span><div class="shot"><img src="img/drp9.webp" alt="DRP9 creator marketplace" loading="lazy"></div><div class="meta"><div><h3>DRP9</h3><p>Creator marketplace</p></div></div></article>
     </div>
   </div>
 </section>
 
-<section class="case wrap" aria-label="Case: Triple.blue">
+<section class="case wrap" aria-label="Case: Adam">
   <div class="grid">
     <div class="txt">
-      <div class="eyebrow rv">case 01 / ai for property management</div>
-      <span class="pill rv">exited · now part of Aareon</span>
-      <div class="big"><span data-count="60" data-suffix="%+">60%+</span></div>
-      <h3 class="rv">of Dutch homeowners associations run on Triple.blue.</h3>
-      <ul class="rv"><li>An AI agent for VvE meetings that also coordinates maintenance.</li><li>Now a business unit of Aareon, Europe’s leading real estate software group.</li></ul>
+      <div class="eyebrow rv">case 01 / AI for property maintenance</div>
+      <span class="pill rv">live · 6+ countries</span>
+      <div class="big"><span data-count="80" data-suffix="%+">80%+</span></div>
+      <h3 class="rv">Automated orders with zero human intervention.</h3>
+      <ul class="rv"><li>Launched in the UK, Czech Republic and Slovakia.</li><li>Fully automated agents handle all orders across painters and electricians.</li></ul>
     </div>
-    <div class="frame tilt" data-speed="-0.12"><span class="slashdeco" data-speed="0.3"></span><div class="inner"><img src="img/triple.webp" alt="Triple.blue: AI that removes friction from daily work" loading="lazy"></div></div>
+    <div class="frame tilt" data-speed="-0.12"><span class="slashdeco" data-speed="0.3"></span><div class="inner"><a href="https://www.myadam.pro/gb" target="_blank" rel="noopener" aria-label="Visit Adam"><img src="img/adam.webp" alt="Adam: flooring made smart in the United Kingdom" loading="lazy"></a></div></div>
   </div>
 </section>
 
@@ -421,7 +423,8 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
   <h2 style="margin-top:22px">Built by us.<span class="o">Trusted at scale.</span></h2>
   <p class="lead" style="margin-top:22px">The products and companies we have built and led alongside. These are our partners.</p>
   <div class="grp">Products we built</div>
-  <div class="lgrid" id="lgrid">
+  <div class="lgrid nine" id="lgrid">
+      <div class="lt" role="img" aria-label="Adam"><i style="--m:url(img/logo-adam.webp)"></i></div>
       <div class="lt" role="img" aria-label="Triple.blue"><i style="--m:url(img/logo-triple.webp)"></i></div>
       <div class="lt" role="img" aria-label="Uniek"><i style="--m:url(img/logo-uniek.webp)"></i></div>
       <div class="lt" role="img" aria-label="UpHill"><i style="--m:url(img/logo-uphill.webp)"></i></div>
@@ -630,7 +633,7 @@ function frame(){
   const pr=prodSec.getBoundingClientRect();
   const hp=Math.min(1,Math.max(0,-pr.top/(trackMax||1)));
   track.style.transform=`translate3d(${(-hp*trackMax).toFixed(1)}px,0,0)`;
-  pc.textContent=String(Math.min(8,1+Math.round(hp*7))).padStart(2,'0');
+  pc.textContent=String(Math.min(9,1+Math.round(hp*8))).padStart(2,'0');
 }
 function stepFromProcess(){
   const r=proc.getBoundingClientRect(),span=r.height-innerHeight;
