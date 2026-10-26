@@ -155,7 +155,10 @@ nav.top ul a:hover::after,nav.top ul a.on::after{right:0}
 .frame .slashdeco{position:absolute;right:-20px;top:-70px;width:150px;height:110px;background:var(--orange);clip-path:polygon(55% 0,100% 0,45% 100%,0 100%);z-index:-1;will-change:transform}
 
 /* LOGO WALL */
-.logos{padding-block:clamp(10px,2vw,30px) clamp(90px,11vw,160px);position:relative;overflow:hidden}
+.logos{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-block:clamp(90px,10vw,140px);position:relative;overflow:hidden;border-top:1px solid var(--line);background:radial-gradient(900px 500px at 85% 0%,rgba(233,84,42,.10),transparent 60%),var(--ink)}
+.logos-in{width:100%}
+.logos h2{font-size:clamp(40px,6.4vw,96px)}
+.lt{will-change:transform}
 .logos h2 .o{color:var(--orange);display:block}
 .logos .grp{display:flex;align-items:center;gap:18px;font-weight:600;font-size:16px;margin:clamp(44px,6vw,72px) 0 18px}
 .logos .grp::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -290,6 +293,7 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
     <li><a href="#who">Who we are</a></li>
     <li><a href="#how">How we build</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#partners">Partners</a></li>
     <li><a href="#people">Founders</a></li>
   </ul>
   <a class="btn" href="#contact">Let’s build <span class="slash" aria-hidden="true"></span></a>
@@ -411,28 +415,31 @@ dialog.bio[open]{animation:pop .45s cubic-bezier(.2,.8,.2,1)}
   </div>
 </section>
 
-<section class="logos wrap" id="logos" aria-label="Track record">
-  <div class="eyebrow rv">05 / track record</div>
-  <h2 class="rv" style="margin-top:22px">Built by us.<span class="o">Trusted at scale.</span></h2>
-  <div class="grp rv">Products we built</div>
+<section class="logos wrap" id="partners" aria-label="Our partners">
+ <div class="logos-in">
+  <div class="eyebrow">05 / our partners</div>
+  <h2 style="margin-top:22px">Built by us.<span class="o">Trusted at scale.</span></h2>
+  <p class="lead" style="margin-top:22px">The products and companies we have built and led alongside. These are our partners.</p>
+  <div class="grp">Products we built</div>
   <div class="lgrid" id="lgrid">
-      <div class="lt rv" role="img" aria-label="Triple.blue"><i style="--m:url(img/logo-triple.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="Uniek"><i style="--m:url(img/logo-uniek.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="UpHill"><i style="--m:url(img/logo-uphill.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="iMolty"><i style="--m:url(img/logo-imolty.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="Xdaam"><i style="--m:url(img/logo-xdaam.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="4Sale"><i style="--m:url(img/logo-4sale.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="Cartona"><i style="--m:url(img/logo-cartona.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="DRP9"><i style="--m:url(img/logo-drp9.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Triple.blue"><i style="--m:url(img/logo-triple.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Uniek"><i style="--m:url(img/logo-uniek.webp)"></i></div>
+      <div class="lt" role="img" aria-label="UpHill"><i style="--m:url(img/logo-uphill.webp)"></i></div>
+      <div class="lt" role="img" aria-label="iMolty"><i style="--m:url(img/logo-imolty.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Xdaam"><i style="--m:url(img/logo-xdaam.webp)"></i></div>
+      <div class="lt" role="img" aria-label="4Sale"><i style="--m:url(img/logo-4sale.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Cartona"><i style="--m:url(img/logo-cartona.webp)"></i></div>
+      <div class="lt" role="img" aria-label="DRP9"><i style="--m:url(img/logo-drp9.webp)"></i></div>
   </div>
-  <div class="grp rv">Where our founders have led</div>
+  <div class="grp">Where our founders have led</div>
   <div class="lgrid five">
-      <div class="lt rv" role="img" aria-label="BetterUp"><i style="--m:url(img/logo-betterup.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="Booking.com"><i style="--m:url(img/logo-booking.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="Catawiki"><i style="--m:url(img/logo-catawiki.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="elmenus"><i style="--m:url(img/logo-elmenus.webp)"></i></div>
-      <div class="lt rv" role="img" aria-label="CONNY"><i style="--m:url(img/logo-conny.webp)"></i></div>
+      <div class="lt" role="img" aria-label="BetterUp"><i style="--m:url(img/logo-betterup.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Booking.com"><i style="--m:url(img/logo-booking.webp)"></i></div>
+      <div class="lt" role="img" aria-label="Catawiki"><i style="--m:url(img/logo-catawiki.webp)"></i></div>
+      <div class="lt" role="img" aria-label="elmenus"><i style="--m:url(img/logo-elmenus.webp)"></i></div>
+      <div class="lt" role="img" aria-label="CONNY"><i style="--m:url(img/logo-conny.webp)"></i></div>
   </div>
+ </div>
 </section>
 
 <section class="cream whatwedo wrap" aria-label="What we do">
@@ -580,6 +587,7 @@ const proc=document.querySelector('.process'),Ls=[...document.querySelectorAll('
 const prodSec=document.querySelector('.products'),track=document.getElementById('track'),pc=document.getElementById('pc');
 const ideaLeg=document.getElementById('ideaLeg'),idea=document.querySelector('.idea');
 const heroFade=document.querySelector('[data-fade]');
+const partners=document.getElementById('partners'),ltiles=[...partners.querySelectorAll('.lt')];
 let trackMax=0,ticking=false;
 const horizontal=()=>!reduce;
 function layout(){
@@ -613,6 +621,10 @@ function frame(){
   const ir=idea.getBoundingClientRect();
   const ip=Math.min(1,Math.max(0,(vh-ir.top)/(vh*0.9)));
   ideaLeg.style.transform=`translate(${(1-ip)*-60}px,${(1-ip)*90}px)`;
+  // partners: tiles converge from staggered depths as the section arrives
+  const ptr=partners.getBoundingClientRect();
+  const pp=Math.min(1,Math.max(0,(vh-ptr.top)/(vh*0.85)));
+  ltiles.forEach((t,k)=>{const d=(1-pp)*(60+((k*37)%5)*28);t.style.transform=pp>=1?'':`translate3d(0,${d.toFixed(1)}px,0) rotate(${((k%2?1:-1)*(1-pp)*3).toFixed(2)}deg)`});
   stepFromProcess();
   // horizontal rail
   const pr=prodSec.getBoundingClientRect();
@@ -646,7 +658,7 @@ document.querySelectorAll('.lt').forEach(t=>t.addEventListener('pointermove',e=>
 const links=[...document.querySelectorAll('nav.top ul a')];
 if('IntersectionObserver' in window){
   const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
-  ['who','how','work','people'].forEach(id=>so.observe(document.getElementById(id)));
+  ['who','how','work','partners','people'].forEach(id=>so.observe(document.getElementById(id)));
 }
 })();
 </script>
