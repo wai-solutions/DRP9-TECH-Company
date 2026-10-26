@@ -530,11 +530,11 @@ if('IntersectionObserver' in window && !reduce){
   rvEls.forEach(el=>io.observe(el));
   const co=new IntersectionObserver(es=>es.forEach(e=>{
     const el=e.target;
-    if(!e.isIntersecting){el._seen=false;return}
-    if(el._seen||e.intersectionRatio<.6)return;el._seen=true;
+    if(!e.isIntersecting||e.intersectionRatio<.05){el._seen=false;return}
+    if(el._seen||e.intersectionRatio<.45)return;el._seen=true;
     const end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now(),d=1600,run=(el._run||0)+1;el._run=run;
     const step=t=>{if(el._run!==run)return;const p=Math.min(1,(t-t0)/d),v=Math.round(end*(1-Math.pow(1-p,4)));el.textContent=v+suf;if(p<1)requestAnimationFrame(step)};
-    requestAnimationFrame(step)}),{threshold:[0,.6]});
+    requestAnimationFrame(step)}),{threshold:[0,.05,.45,1]});
   counts.forEach(el=>co.observe(el));
 }
 
